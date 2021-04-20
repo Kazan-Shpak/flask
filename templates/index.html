@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Каталог книг</h1>
+
+<table>
+    <tr>
+        <td width="40%" >Название книги</td>
+        <td width="30%" >Авторы</td>
+        <td width="30%" >Путь к файлу</td>
+        <td width="30%" >Скачать</td>
+    </tr>
+{% for item in books%}
+<div class="col-md6 border rounded">
+    <tr>
+        <td width="40%" >{{item.title}}</td>
+        <td width="30%" >{{item.author}}</td>
+        <td width="30%" >{{item.path}}</td>
+        <td width="30%" >
+            <a href=/pdf/{{item.path}} target="_blank"  style="margin-right: 5px;">Download pdf </a>
+        </td>
+    </tr>
+</div>
+{% endfor %}
+</table>
+{% endblock %}
